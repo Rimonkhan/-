@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="bn" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>৬৪ জেলার সুস্বাদু খাবার ঘর — Demo</title>
+  <meta name="description" content="64 জেলার খাঁটি স্বাদ — অর্ডার করুন বিকাশ/নগদ/রকেট/হোয়াটসঅ্যাপ দিয়ে।">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  
+  <style>
+    body { 
+      background: linear-gradient(180deg,#0f172a 0%, #071129 60%); 
+      color: #e6eef8;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+  
+    }
+    .neon { text-shadow: 0 0 6px rgba(99,102,241,0.6), 0 0 18px rgba(59,130,246,0.15); }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(6px); }
+    .product-card { position: relative; }
+    .product-card:hover { transform: translateY(-6px); cursor: pointer; }
+    .modal-backdrop { background-color: rgba(0,0,0,0.7); backdrop-filter: blur(4px); }
+    .star-rating { display: flex; flex-direction: row-reverse; justify-content: flex-end; }
+    .star-rating input[type="radio"] { display: none; }
+    .star-rating label { font-size: 1.5rem; color: #4a5568; cursor: pointer; transition: color 0.2s; }
+    .star-rating input[type="radio"]:checked ~ label,
+    .star-rating label:hover,
+    .star-rating label:hover ~ label { color: #facc15; }
+    .feedback-slide { min-width: 100%; }
+    .discount-badge {
+        position: absolute;
+        top: 12px;
+        right: -34px;
+        background-color: #ef4444;
+        color: white;
+        padding: 5px 35px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        transform: rotate(45deg);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans">
+  <header class="fixed top-0 left-0 w-full z-50 bg-gray-900/80 backdrop-blur-md py-4 px-4 md:px-10 flex items-center justify-between shadow-md">
+    <div class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-indigo-600 to-sky-400 flex items-center justify-center text-2xl font-bold">৬৪</div>
+      <div>
+        <h1 class="text-xl md:text-2xl font-extrabold neon">৬৪ জেলার সুস্বাদু খাবার ঘর</h1>
+        <p class="text-xs text-slate-300">ঘরের স্বাদ — দেশে ঘুরে খোঁজা</p>
+      </div>
+    </div>
+    <nav class="hidden md:flex gap-4 items-center">
+      <a href="#products" class="text-white text-sm hover:text-indigo-400">প্রোডাক্ট</a>
+      <a href="#about" class="text-white text-sm hover:text-indigo-400">সম্বন্ধে</a>
+      <a href="#feedback" class="text-white text-sm hover:text-indigo-400">প্রতিক্রিয়া</a>
+      <a href="#contact" class="text-white text-sm hover:text-indigo-400">যোগাযোগ</a>
+      <a href="#" id="whatsapp-top" class="px-3 py-2 bg-green-500 text-black rounded shadow">WhatsApp</a>
+    </nav>
+    <button id="mobile-menu-btn" class="md:hidden p-2 rounded glass text-white z-50">☰</button>
+    <div id="mobile-menu" class="hidden absolute top-0 right-0 w-56 mt-16 mr-4 rounded-lg bg-slate-800 shadow-xl md:hidden">
+        <nav class="flex flex-col p-4 gap-4">
+            <a href="#products" class="text-white text-sm hover:text-indigo-400">প্রোডাক্ট</a>
+            <a href="#about" class="text-white text-sm hover:text-indigo-400">সম্বন্ধে</a>
+            <a href="#feedback" class="text-white text-sm hover:text-indigo-400">প্রতিক্রিয়া</a>
+            <a href="#contact" class="text-white text-sm hover:text-indigo-400">যোগাযোগ</a>
+            <a href="#" id="whatsapp-mobile" class="px-3 py-2 bg-green-500 text-black rounded shadow text-center">WhatsApp</a>
+        </nav>
+    </div>
+  </header>
+
+  <main>
+      <section class="pt-24 px-4 md:px-10">
+        <div class="grid md:grid-cols-2 gap-6 items-center">
+          <div class="glass p-5 rounded-lg">
+            <h2 class="text-3xl font-bold neon">খাঁটি বগুড়ার দই — স্পেশাল স্লাইড</h2>
+            <p class="mt-3 text-sm text-slate-300">প্রতিটি জেলায় প্রচলিত ঐতিহ্যবাহী স্বাদ এখন এক জায়গায়। অর্ডার করতে WhatsApp ক্লিক করুন।</p>
+            <div class="mt-4 relative">
+              <div id="slider" class="overflow-hidden rounded-lg shadow-lg"><div class="slides flex transition-transform duration-500">
+                  <img src="/images/1.jpg" alt="Bogura Doi 1" class="w-full object-cover md:h-64">
+                  <img src="/images/3.jpg" alt="Bogura Doi 2" class="w-full object-cover md:h-64">
+                  <img src="/images/5.jpg" alt="Bogura Doi 3" class="w-full object-cover md:h-64">
+              </div></div>
+              <div class="absolute left-3 top-1/2 -translate-y-1/2"><button id="prev" class="px-3 py-1 glass rounded">◀</button></div>
+              <div class="absolute right-3 top-1/2 -translate-y-1/2"><button id="next" class="px-3 py-1 glass rounded">▶</button></div>
+            </div>
+            <div class="mt-4 flex gap-3">
+              <button id="order-hero" class="px-4 py-2 bg-indigo-500 rounded-md font-semibold">অর্ডার করুন</button>
+              <a href="#products" class="px-4 py-2 glass rounded-md">প্রোডাক্ট দেখুন</a>
+            </div>
+          </div>
+          <div class="glass p-5 rounded-lg">
+            <h3 class="font-bold">তাত্ক্ষণিক কন্টাক্ট</h3>
+            <p class="text-sm text-slate-300 mt-2">WhatsApp-এ সরাসরি অর্ডার করুন। পেমেন্টের জন্য নিচের যেকোনো একটি পদ্ধতি বেছে নিন।</p>
+            <div class="mt-4">
+              <p class="text-xs text-slate-300">পেমেন্ট পদ্ধতি</p>
+              <div class="flex flex-col gap-2 mt-2">
+                <button class="order-method glass p-3 rounded text-left hover:border-slate-600 border border-transparent transition-colors" data-method="বিকাশ">বিকাশ দিয়ে অর্ডার</button>
+                <button class="order-method glass p-3 rounded text-left hover:border-slate-600 border border-transparent transition-colors" data-method="নগদ">নগদ দিয়ে অর্ডার</button>
+                <button class="order-method glass p-3 rounded text-left hover:border-slate-600 border border-transparent transition-colors" data-method="রকেট">রকেট দিয়ে অর্ডার</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="products" class="px-4 md:px-10 mt-12 scroll-mt-20">
+        <h2 class="text-2xl font-bold neon">আমাদের প্রোডাক্টসমূহ</h2>
+        <p class="text-sm text-slate-300 mt-1">আপনার পছন্দের প্রোডাক্টটি খুঁজে নিন অথবা তালিকা থেকে ব্রাউজ করুন।</p>
+        <div class="mt-6"><input type="text" id="search-bar" placeholder="প্রোডাক্ট খুঁজুন..." class="w-full p-3 rounded glass bg-slate-900/50 border border-slate-700 focus:border-indigo-500 focus:outline-none"></div>
+        <div id="product-grid" class="mt-6 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+        <div id="load-more-container" class="text-center mt-8"><button id="load-more-btn" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-md font-semibold transition-all">আরও দেখুন</button></div>
+      </section>
+      
+      <div class="px-4 md:px-10 mt-10 grid md:grid-cols-2 gap-8">
+        <section id="about" class="glass p-5 rounded-lg scroll-mt-20">
+            <h3 class="text-xl font-bold neon">আমাদের সম্পর্কে</h3>
+            <p class="text-sm text-slate-300 mt-2">আমরা বাংলাদেশের ৬৪টি জেলার ঐতিহ্যবাহী এবং খাঁটি খাবার আপনার দোরগোড়ায় পৌঁছে দিতে প্রতিশ্রুতিবদ্ধ। প্রতিটি পণ্য আমরা সরাসরি স্থানীয় কারিগরদের থেকে সংগ্রহ করি, যাতে আপনি সেরা এবং অকৃত্রিম স্বাদ উপভোগ করতে পারেন।</p>
+        </section>
+        <section id="feedback" class="glass p-5 rounded-lg scroll-mt-20">
+          <h3 class="text-xl font-bold neon">কাস্টমার ফিডব্যাক</h3>
+          <div id="feedback-slider-container" class="mt-4 relative"><div class="overflow-hidden rounded-lg min-h-[120px]"><div id="feedback-slides" class="flex transition-transform duration-500"></div></div>
+            <div class="absolute left-2 top-1/2 -translate-y-1/2"><button id="feedback-prev" class="px-2 py-0 glass rounded">◀</button></div>
+            <div class="absolute right-2 top-1/2 -translate-y-1/2"><button id="feedback-next" class="px-2 py-0 glass rounded">▶</button></div>
+          </div>
+          <form id="feedback-form" class="mt-4 grid gap-3 border-t border-slate-700 pt-4">
+            <p class="text-sm text-slate-300">আপনার মূল্যবান মতামত আমাদের জানান:</p>
+            <div class="star-rating">
+                <input type="radio" id="5-stars" name="rating" value="5" required /><label for="5-stars"><i class="fas fa-star"></i></label>
+                <input type="radio" id="4-stars" name="rating" value="4" /><label for="4-stars"><i class="fas fa-star"></i></label>
+                <input type="radio" id="3-stars" name="rating" value="3" /><label for="3-stars"><i class="fas fa-star"></i></label>
+                <input type="radio" id="2-stars" name="rating" value="2" /><label for="2-stars"><i class="fas fa-star"></i></label>
+                <input type="radio" id="1-star" name="rating" value="1" /><label for="1-star"><i class="fas fa-star"></i></label>
+            </div>
+            <input required class="p-3 rounded glass bg-slate-900/50" type="text" id="fb-name" placeholder="আপনার নাম">
+            <textarea required class="p-3 rounded glass bg-slate-900/50" id="fb-text" placeholder="আপনার মন্তব্য"></textarea>
+            <div class="flex gap-2"><button type="submit" class="px-4 py-2 bg-emerald-500 rounded-md">পাঠান</button></div>
+          </form>
+        </section>
+      </div>
+      <section id="contact" class="px-4 md:px-10 mt-10 scroll-mt-20">
+          <div class="glass p-6 rounded-lg">
+            <h3 class="text-2xl font-bold neon text-center mb-6">যোগাযোগ করুন</h3>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <p class="text-sm text-slate-300 mb-5">যেকোনো প্রয়োজনে আমাদের সাথে সরাসরি যোগাযোগ করতে পারেন।</p>
+                <ul class="space-y-4 text-slate-200">
+                  <li class="flex items-start gap-4"><i class="fas fa-map-marker-alt text-indigo-400 w-5 text-center pt-1"></i><span>House 123, Road 4, Block B, Gulshan, Dhaka-1212, Bangladesh</span></li>
+                  <li class="flex items-center gap-4"><i class="fas fa-envelope text-indigo-400 w-5 text-center"></i><a href="mailto:info@64jelar-khabar.com" class="hover:text-indigo-400">info@64jelar-khabar.com</a></li>
+                  <li class="flex items-center gap-4"><i class="fas fa-phone text-indigo-400 w-5 text-center"></i><a href="tel:+8801635754213" class="hover:text-indigo-400">+8801635754213</a></li>
+                </ul>
+              </div>
+              <div class="w-full h-full min-h-[250px]"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58421.4984992524!2d90.3804810618059!3d23.77189182379515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7380a352313%3A0x2f21644e1329a282!2sGulshan%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1694354415891!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-lg"></iframe></div>
+            </div>
+          </div>
+      </section>
+  </main>
+  
+  <div class="fixed bottom-4 left-1/2 -translate-x-1/2 md:hidden z-50"><a id="whatsapp-cta" href="#" class="px-6 py-3 rounded-full bg-green-500 text-black font-bold shadow-lg">WhatsApp এ অর্ডার</a></div>
+
+  <footer class="mt-12 p-6 text-center text-slate-400 border-t border-slate-800">
+    <div class="mb-4">
+        <p class="text-sm mb-3">আমাদের সাথে সংযুক্ত থাকুন</p>
+        <div class="flex justify-center gap-5">
+            <a href="#" target="_blank" class="text-2xl hover:text-indigo-400 transition-colors duration-300"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" target="_blank" class="text-2xl hover:text-indigo-400 transition-colors duration-300"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" target="_blank" class="text-2xl hover:text-indigo-400 transition-colors duration-300"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </div>
+    <p id="copyright-notice" class="text-xs">© 2025 ৬৪ জেলার সুস্বাদু খাবার ঘর — Demo • Built with ❤️</p>
+  </footer>
+
+  <div id="product-modal" class="fixed inset-0 modal-backdrop flex items-center justify-center p-4 z-[100] hidden">
+    <div class="glass rounded-lg max-w-lg w-full relative">
+        <button id="close-modal" class="absolute top-2 right-2 p-2 text-white text-2xl">×</button>
+        <div id="modal-content" class="p-5"></div>
+    </div>
+  </div>
+
+  <div id="payment-modal" class="fixed inset-0 modal-backdrop flex items-center justify-center p-4 z-[100] hidden">
+    <div class="glass rounded-lg max-w-md w-full relative border border-slate-700">
+        <button id="close-payment-modal" class="absolute top-2 right-2 p-2 text-white text-2xl">×</button>
+        <div id="payment-modal-content" class="p-6">
+            </div>
+    </div>
+  </div>
+
+
+  <script>
+    // Main Application Logic
+    const PHONE_NUMBER = '+8801635754213';
+    const PAYMENT_NUMBER = '+8801782642544';
+
+    const products = [
+      { id: 1, title: 'বগুড়ার খাঁটি দই', price: '৳120', weight: '১ কেজি', img: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=800&auto=format&fit=crop', desc: 'খাঁটি গরুর দুধ থেকে তৈরি, মাটির পাত্রে জমানো ঐতিহ্যবাহী বগুড়ার দই। এর অতুলনীয় স্বাদ আপনাকে মুগ্ধ করবেই।' },
+      { id: 2, title: 'টাঙ্গাইলের চমচম', price: '৳450', originalPrice: '৳500', weight: '১ কেজি', img: '/images/5.jpg', desc: 'পোড়াবাড়ির বিখ্যাত চমচম, যার স্বাদ মুখে লেগে থাকার মতো। খাঁটি ছানা ও সেরা উপাদান দিয়ে তৈরি।' },
+      { id: 3, title: 'কুমিল্লার রসমালাই', price: '৳280', weight: '৫০০ গ্রাম', img: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=800&auto=format&fit=crop', desc: 'মাতৃভান্ডারের আসল স্বাদের রসমালাই। ছোট ছোট রসগোল্লা ঘন দুধের সরে ভাসমান, এক কথায় অসাধারণ।' },
+      { id: 4, title: 'নাটোরের কাঁচাগোল্লা', price: '৳320', originalPrice: '৳350', weight: '৫০০ গ্রাম', img: '/images/1.jpg', desc: 'সম্পূর্ণ ভিন্নধর্মী এক মিষ্টি। ছানা ও চিনির সমন্বয়ে তৈরি এই মিষ্টি আপনাকে দেবে এক নতুন অভিজ্ঞতা।' },
+      { id: 5, title: 'যশোরের খেজুর গুড়', price: '৳400', weight: '১ কেজি', img: '/images/3.jpg', desc: 'শীতের সকালে সেরা মানের পাটালি গুড়। পিঠা, পায়েস বা শুধু খাওয়ার জন্য অতুলনীয়।' },
+      { id: 6, title: 'সুন্দরবনের খাঁটি মধু', price: '৳750', originalPrice: '৳800', weight: '৫০০ গ্রাম', img: '/images/1.jpg', desc: 'সরাসরি সুন্দরবনের মৌয়ালদের থেকে সংগ্রহ করা শতভাগ খাঁটি প্রাকৃতিক মধু।' },
+      { id: 7, title: 'সিলেটের সাতকরা আচার', price: '৳180', weight: '২৫০ গ্রাম', img: '/images/5.jpg', desc: 'সাতকরার স্বতন্ত্র গন্ধ ও স্বাদে তৈরি এই আচার মাংস বা ভাতের সাথে খাওয়ার জন্য চমৎকার।' },
+      { id: 8, title: 'ময়মনসিংহের মণ্ডা', price: '৳220', weight: '৫০০ গ্রাম', img: '/images/logo.png', desc: 'ঐতিহ্যবাহী মুক্তাছারার মণ্ডা, যা দুধ ও চিনি দিয়ে বানানো হয়। মুখে দিলেই মিলিয়ে যায়।' },
+      { id: 9, title: 'খুলনার চুইঝাল মাংস', price: '৳650', weight: '১ কেজি', img: '/images/3.jpg', desc: 'চুইঝালের অসাধারণ স্বাদে গরুর মাংসের ঐতিহ্যবাহী ঝাল রান্না। একবার খেলে ভুলতে পারবেন না।' },
+      { id: 10, title: 'কক্সবাজারের লইট্টা ফ্রাই', price: '৳300', weight: '৫০০ গ্রাম', img: '/images/3.jpg', desc: 'সাগর পাড়ের তাজা লইট্টা মাছের মুচমুচে ফ্রাই। গরম ভাতের সাথে খাওয়ার জন্য অসাধারণ একটি পদ।' },
+      { id: 11, title: 'রাজশাহীর আম', price: '৳1500', originalPrice: '৳1600', weight: '১০ কেজি', img: 'https://images.unsplash.com/photo-1591078381989-8a4c8a52994f?q=80&w=800&auto=format&fit=crop', desc: 'চিনি ও রসের জন্য বিখ্যাত রাজশাহীর ফজলি আম। সরাসরি বাগান থেকে সংগ্রহ করা শতভাগ কেমিক্যালমুক্ত।' },
+      { id: 12, title: 'পুরান ঢাকার বিরিয়ানি', price: '৳250', weight: '১ প্লেট', img: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=800&auto=format&fit=crop', desc: 'পুরান ঢাকার ঐতিহ্যবাহী স্বাদের কাচ্চি বিরিয়ানি। প্রতি কামড়ে পাবেন নবাবী আমেজ।' }
+    ];
+    
+    document.getElementById('copyright-notice').textContent = `© ${new Date().getFullYear()} ৬৪ জেলার সুস্বাদু খাবার ঘর — Demo • Built with ❤️`;
+    
+    const productGrid = document.getElementById('product-grid');
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const searchBar = document.getElementById('search-bar');
+    const productsPerLoad = 8;
+    let productsCurrentlyShown = 0;
+    
+    function displayProducts(productArray) {
+        productGrid.innerHTML = '';
+        productArray.forEach(p => productGrid.appendChild(createProductCard(p)));
+    }
+    
+    function loadProductsInBatches() {
+        const productsToLoad = products.slice(productsCurrentlyShown, productsCurrentlyShown + productsPerLoad);
+        productsToLoad.forEach(p => productGrid.appendChild(createProductCard(p)));
+        productsCurrentlyShown += productsToLoad.length;
+        if (productsCurrentlyShown >= products.length) {
+            loadMoreBtn.style.display = 'none';
+        }
+    }
+    
+    function createProductCard(p) {
+        const card = document.createElement('div');
+        card.className = 'product-card glass rounded-lg transition-transform overflow-hidden flex flex-col';
+        card.dataset.id = p.id;
+        const badgeHTML = p.originalPrice ? `<div class="discount-badge">ছাড়</div>` : '';
+        const priceHTML = p.originalPrice
+            ? `<div class="flex items-baseline gap-2"><span class="font-bold text-xl text-indigo-400">${p.price}</span><del class="text-sm text-slate-500">${p.originalPrice}</del></div>`
+            : `<div class="font-bold text-xl">${p.price}</div>`;
+        card.innerHTML = `<div class="relative">${badgeHTML}<img src="${p.img}" alt="${p.title}" class="w-full h-44 object-cover pointer-events-none" draggable="false"></div><div class="p-4 flex flex-col flex-grow"><div class="flex justify-between items-start"><h4 class="font-bold text-lg pointer-events-none pr-2">${p.title}</h4><span class="text-xs glass py-1 px-2 rounded-full pointer-events-none whitespace-nowrap">${p.weight}</span></div><p class="text-sm text-slate-300 mt-2 flex-grow pointer-events-none">${p.desc.substring(0, 55)}...</p><div class="mt-4 flex items-center justify-between pointer-events-none">${priceHTML}<button class="order-btn px-4 py-2 rounded-md bg-indigo-600 hover:bg-indigo-700 transition-colors pointer-events-auto text-sm font-semibold" data-id="${p.id}">অর্ডার করুন</button></div></div>`;
+        return card;
+    }
+    
+    searchBar.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase().trim();
+        loadMoreBtn.style.display = 'none';
+        if (searchTerm) {
+            const filteredProducts = products.filter(p => p.title.toLowerCase().includes(searchTerm));
+            displayProducts(filteredProducts);
+        } else {
+            productGrid.innerHTML = '';
+            productsCurrentlyShown = 0;
+            if (products.length > productsPerLoad) {
+                loadMoreBtn.style.display = 'block';
+            }
+            loadProductsInBatches();
+        }
+    });
+    
+    loadProductsInBatches();
+    loadMoreBtn.addEventListener('click', loadProductsInBatches);
+    
+    function openWhatsApp(product, method = ''){
+      const phone = PHONE_NUMBER.replace(/\s+/g, '');
+      let orderText = `*অর্ডার কনফার্মেশন*\n----------------------------------\nপ্রোডাক্ট: *${product.title}*\nপরিমাণ: *${product.weight}*\nদাম: *${product.price}*`;
+      if (product.originalPrice) {
+          orderText += ` (ছাড়কৃত মূল্য)`;
+      }
+      orderText += `\n----------------------------------\nপেমেন্ট পদ্ধতি: ${method || 'আলোচনা সাপেক্ষ'}\n\nদয়া করে আপনার পূর্ণ ঠিকানা এবং ফোন নম্বর পাঠান।`;
+      
+      const text = encodeURIComponent(orderText);
+      const url = `https://wa.me/${phone.replace('+','')}?text=${text}`;
+      window.open(url, '_blank');
+    }
+
+    const paymentModal = document.getElementById('payment-modal');
+    const paymentModalContent = document.getElementById('payment-modal-content');
+
+    function showPaymentModal(method) {
+        paymentModalContent.innerHTML = `
+            <h3 class="text-xl font-bold neon text-center mb-4">${method} পেমেন্ট করার নিয়ম</h3>
+            <p class="text-sm text-center text-slate-300 mb-4">অনুগ্রহ করে নিচের ধাপগুলো অনুসরণ করে পেমেন্ট সম্পন্ন করুন।</p>
+            
+            <div class="mb-5 text-center">
+                <p class="text-xs text-slate-400">আমাদের পার্সোনাল ${method} নম্বর (Send Money)</p>
+                <div class="glass mt-2 p-3 rounded-lg flex items-center justify-center gap-4">
+                    <span id="payment-number-text" class="text-xl font-bold tracking-widest text-indigo-300">${PAYMENT_NUMBER}</span>
+                    <button id="copy-payment-number" class="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 rounded-md text-xs">
+                        <i class="far fa-copy mr-1"></i> কপি
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-left space-y-2 text-sm text-slate-300">
+                <p>✅ <strong>ধাপ ১:</strong> আপনার ${method} অ্যাপ থেকে 'Send Money' অপশনে যান।</p>
+                <p>✅ <strong>ধাপ ২:</strong> উপরে দেওয়া নম্বরটি পেস্ট করে টাকার পরিমাণ লিখুন (পণ্যের মূল্য + ডেলিভারি চার্জ)।</p>
+                <p>✅ <strong>ধাপ ৩:</strong> পেমেন্ট সম্পন্ন হলে, আপনার ঠিকানাসহ ট্রানজেকশন আইডি (TrxID) নিচের বাটনে ক্লিক করে WhatsApp-এ পাঠান।</p>
+            </div>
+
+            <div class="mt-6 text-center">
+                <button id="whatsapp-confirm-btn" data-method="${method}" class="w-full px-5 py-3 bg-green-600 hover:bg-green-700 rounded-md font-bold transition-colors">
+                    <i class="fab fa-whatsapp mr-2"></i> ঠিকানা ও TrxID পাঠান
+                </button>
+            </div>
+        `;
+        paymentModal.classList.remove('hidden');
+    }
+
+    document.addEventListener('click', e => {
+      if(e.target.matches('.order-btn') || e.target.matches('#modal-order-btn')){ 
+        const id = parseInt(e.target.dataset.id);
+        const product = products.find(x => x.id === id);
+        if (product) openWhatsApp(product);
+        return;
+      }
+      
+      if (e.target.closest('.order-method')) {
+        const method = e.target.closest('.order-method').dataset.method;
+        showPaymentModal(method);
+        return;
+      }
+
+      if (e.target.closest('#close-payment-modal')) {
+        paymentModal.classList.add('hidden');
+        return;
+      }
+      
+      if (e.target.closest('#copy-payment-number')) {
+        const numberToCopy = document.getElementById('payment-number-text').innerText;
+        navigator.clipboard.writeText(numberToCopy).then(() => {
+            const btn = e.target.closest('#copy-payment-number');
+            btn.innerHTML = '<i class="fas fa-check mr-1"></i> কপিড!';
+            setTimeout(() => {
+                btn.innerHTML = '<i class="far fa-copy mr-1"></i> কপি';
+            }, 2000);
+        });
+        return;
+      }
+
+      if (e.target.closest('#whatsapp-confirm-btn')) {
+        const method = e.target.closest('#whatsapp-confirm-btn').dataset.method;
+        const phone = PHONE_NUMBER.replace(/\s+/g, '');
+        const text = encodeURIComponent(`আমি '${method}' এর মাধ্যমে পেমেন্ট করেছি।\n\nআমার ঠিকানা এবং TrxID নিচে পাঠাচ্ছি:\n\n(অনুগ্রহ করে এখানে আপনার ঠিকানা ও TrxID লিখুন)`);
+        const url = `https://wa.me/${phone.replace('+','')}?text=${text}`;
+        window.open(url, '_blank');
+        paymentModal.classList.add('hidden');
+        return;
+      }
+      
+      const card = e.target.closest('.product-card');
+      if (card) { 
+        const id = parseInt(card.dataset.id);
+        const product = products.find(x => x.id === id);
+        if (product) showModal(product);
+        return;
+      }
+    });
+    
+    document.getElementById('order-hero').addEventListener('click', () => openWhatsApp(products[0]));
+    document.getElementById('whatsapp-cta').addEventListener('click', (e) => { e.preventDefault(); openWhatsApp(products[0]); });
+    document.getElementById('whatsapp-top').addEventListener('click', (e) => { e.preventDefault(); openWhatsApp(products[0]); });
+    document.getElementById('whatsapp-mobile').addEventListener('click', (e) => { e.preventDefault(); openWhatsApp(products[0]); });
+    
+    const slidesEl = document.querySelector('.slides');
+    let heroIndex = 0;
+    function showHeroSlide(i){ const total = slidesEl.children.length; heroIndex = (i + total) % total; slidesEl.style.transform = `translateX(-${heroIndex * 100}%)`; }
+    document.getElementById('prev').addEventListener('click', () => showHeroSlide(heroIndex - 1));
+    document.getElementById('next').addEventListener('click', () => showHeroSlide(heroIndex + 1));
+    setInterval(() => showHeroSlide(heroIndex + 1), 4000);
+    
+    const feedbackForm = document.getElementById('feedback-form');
+    const feedbackSlidesContainer = document.getElementById('feedback-slides');
+    let feedbacks = [{ name: "আরিফ হোসেন", text: "বগুড়ার দইটা অসাধারণ ছিল! আসল স্বাদ পেয়েছি।", rating: 5, time: "9:15 PM" }, { name: "সাদিয়া ইসলাম", text: "ডেলিভারি খুব দ্রুত ছিল এবং প্যাকেজিংও খুব ভালো ছিল।", rating: 4, time: "8:30 PM" }];
+    let feedbackIndex = 0;
+    function renderFeedbackSlider() {
+        if(feedbacks.length === 0){ feedbackSlidesContainer.innerHTML = `<div class="feedback-slide text-center p-4 text-slate-400">এখনও কোনো ফিডব্যাক নেই।</div>`; return; }
+        feedbackSlidesContainer.innerHTML = feedbacks.map(f => `<div class="feedback-slide p-4 text-center"><div class="text-yellow-400 text-xl">${'★'.repeat(f.rating)}${'☆'.repeat(5 - f.rating)}</div><div class="text-sm text-slate-200 mt-2">"${f.text}"</div><div class="font-bold mt-3 text-sm">${f.name} <span class="text-xs text-slate-400">• ${f.time}</span></div></div>`).join('');
+        showFeedbackSlide(feedbackIndex);
+    }
+    function showFeedbackSlide(i) { const total = feedbacks.length; if(total === 0) return; feedbackIndex = (i + total) % total; feedbackSlidesContainer.style.transform = `translateX(-${feedbackIndex * 100}%)`; }
+    feedbackForm.addEventListener('submit', e => { e.preventDefault(); const name = document.getElementById('fb-name').value.trim(); const text = document.getElementById('fb-text').value.trim(); const rating = feedbackForm.querySelector('input[name="rating"]:checked'); if (!name || !text || !rating) { alert("দয়া করে নাম, মন্তব্য এবং স্টার রেটিং দিন।"); return; } feedbacks.unshift({ name, text, rating: parseInt(rating.value), time: new Date().toLocaleTimeString('bn-BD', { hour: 'numeric', minute: 'numeric'}) }); renderFeedbackSlider(); feedbackForm.reset(); });
+    document.getElementById('feedback-prev').addEventListener('click', () => showFeedbackSlide(feedbackIndex - 1));
+    document.getElementById('feedback-next').addEventListener('click', () => showFeedbackSlide(feedbackIndex + 1));
+    renderFeedbackSlider();
+    
+    const mobileBtn = document.getElementById('mobile-menu-btn'); const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', (e) => { e.stopPropagation(); mobileMenu.classList.toggle('hidden'); });
+    document.addEventListener('click', (e) => { if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) { mobileMenu.classList.add('hidden'); } });
+    
+    const modal = document.getElementById('product-modal'); const modalContent = document.getElementById('modal-content');
+    function showModal(product) {
+        const priceHTML = product.originalPrice ? `<div class="flex items-baseline gap-3"><span class="text-2xl font-bold text-indigo-400">${product.price}</span><del class="text-lg text-slate-400">${product.originalPrice}</del></div>` : `<span class="text-2xl font-semibold">${product.price}</span>`;
+        modalContent.innerHTML = `<img src="${product.img}" alt="${product.title}" class="w-full h-60 object-cover rounded-lg mb-4" draggable="false"><h2 class="text-2xl font-bold neon">${product.title}</h2><p class="text-slate-400">পরিমাণ: ${product.weight}</p><p class="text-slate-300 mt-2">${product.desc}</p><div class="mt-4 flex items-center justify-between"><div class="font-semibold">${priceHTML}</div><button id="modal-order-btn" data-id="${product.id}" class="px-5 py-2 bg-indigo-600 rounded-md font-bold">অর্ডার করুন</button></div>`;
+        modal.classList.remove('hidden');
+    }
+    document.getElementById('close-modal').addEventListener('click', () => modal.classList.add('hidden'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
+    paymentModal.addEventListener('click', (e) => { if (e.target === paymentModal) paymentModal.classList.add('hidden'); });
+
+    // রাইট-ক্লিক ব্লক করার জন্য
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // কিবোর্ড শর্টকাট ব্লক করার জন্য
+  document.addEventListener('keydown', function(e) {
+    // F12 (Inspect) এবং Ctrl+U (View Source) ব্লক
+    if (e.key === 'F12' || (e.ctrlKey && e.key === 'u')) {
+      e.preventDefault();
+    }
+    // Ctrl+C (Copy) ব্লক
+    if (e.ctrlKey && e.key === 'c') {
+      e.preventDefault();
+    }
+  });
+  </script>
+</body>
+</html>
