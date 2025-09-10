@@ -81,8 +81,8 @@
             <div class="mt-4 relative">
               <div id="slider" class="overflow-hidden rounded-lg shadow-lg"><div class="slides flex transition-transform duration-500">
                   <img src="images/1.jpg" alt="Bogura Doi 1" class="w-full object-cover md:h-64">
-                  <img src="/images/3.jpg" alt="Bogura Doi 2" class="w-full object-cover md:h-64">
-                  <img src="/images/5.jpg" alt="Bogura Doi 3" class="w-full object-cover md:h-64">
+                  <img src="images/3.jpg" alt="Bogura Doi 2" class="w-full object-cover md:h-64">
+                  <img src="images/5.jpg" alt="Bogura Doi 3" class="w-full object-cover md:h-64">
               </div></div>
               <div class="absolute left-3 top-1/2 -translate-y-1/2"><button id="prev" class="px-3 py-1 glass rounded">◀</button></div>
               <div class="absolute right-3 top-1/2 -translate-y-1/2"><button id="next" class="px-3 py-1 glass rounded">▶</button></div>
@@ -195,18 +195,18 @@
     const PAYMENT_NUMBER = '+8801782642544';
 
     const products = [
-      { id: 1, title: 'বগুড়ার খাঁটি দই', price: '৳120', weight: '১ কেজি', img: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=800&auto=format&fit=crop', desc: 'খাঁটি গরুর দুধ থেকে তৈরি, মাটির পাত্রে জমানো ঐতিহ্যবাহী বগুড়ার দই। এর অতুলনীয় স্বাদ আপনাকে মুগ্ধ করবেই।' },
-      { id: 2, title: 'টাঙ্গাইলের চমচম', price: '৳450', originalPrice: '৳500', weight: '১ কেজি', img: '/images/5.jpg', desc: 'পোড়াবাড়ির বিখ্যাত চমচম, যার স্বাদ মুখে লেগে থাকার মতো। খাঁটি ছানা ও সেরা উপাদান দিয়ে তৈরি।' },
-      { id: 3, title: 'কুমিল্লার রসমালাই', price: '৳280', weight: '৫০০ গ্রাম', img: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=800&auto=format&fit=crop', desc: 'মাতৃভান্ডারের আসল স্বাদের রসমালাই। ছোট ছোট রসগোল্লা ঘন দুধের সরে ভাসমান, এক কথায় অসাধারণ।' },
-      { id: 4, title: 'নাটোরের কাঁচাগোল্লা', price: '৳320', originalPrice: '৳350', weight: '৫০০ গ্রাম', img: '/images/1.jpg', desc: 'সম্পূর্ণ ভিন্নধর্মী এক মিষ্টি। ছানা ও চিনির সমন্বয়ে তৈরি এই মিষ্টি আপনাকে দেবে এক নতুন অভিজ্ঞতা।' },
-      { id: 5, title: 'যশোরের খেজুর গুড়', price: '৳400', weight: '১ কেজি', img: '/images/3.jpg', desc: 'শীতের সকালে সেরা মানের পাটালি গুড়। পিঠা, পায়েস বা শুধু খাওয়ার জন্য অতুলনীয়।' },
+      { id: 1, title: 'বগুড়ার খাঁটি দই', price: '৳120', weight: '১ কেজি', img: 'images/1.jpg', desc: 'খাঁটি গরুর দুধ থেকে তৈরি, মাটির পাত্রে জমানো ঐতিহ্যবাহী বগুড়ার দই। এর অতুলনীয় স্বাদ আপনাকে মুগ্ধ করবেই।' },
+      { id: 2, title: 'টাঙ্গাইলের চমচম', price: '৳450', originalPrice: '৳500', weight: '১ কেজি', img: 'images/5.jpg', desc: 'পোড়াবাড়ির বিখ্যাত চমচম, যার স্বাদ মুখে লেগে থাকার মতো। খাঁটি ছানা ও সেরা উপাদান দিয়ে তৈরি।' },
+      { id: 3, title: 'কুমিল্লার রসমালাই', price: '৳280', weight: '৫০০ গ্রাম', img: 'images/1.jpg', desc: 'মাতৃভান্ডারের আসল স্বাদের রসমালাই। ছোট ছোট রসগোল্লা ঘন দুধের সরে ভাসমান, এক কথায় অসাধারণ।' },
+      { id: 4, title: 'নাটোরের কাঁচাগোল্লা', price: '৳320', originalPrice: '৳350', weight: '৫০০ গ্রাম', img: 'images/1.jpg', desc: 'সম্পূর্ণ ভিন্নধর্মী এক মিষ্টি। ছানা ও চিনির সমন্বয়ে তৈরি এই মিষ্টি আপনাকে দেবে এক নতুন অভিজ্ঞতা।' },
+      { id: 5, title: 'যশোরের খেজুর গুড়', price: '৳400', weight: '১ কেজি', img: 'images/3.jpg', desc: 'শীতের সকালে সেরা মানের পাটালি গুড়। পিঠা, পায়েস বা শুধু খাওয়ার জন্য অতুলনীয়।' },
       { id: 6, title: 'সুন্দরবনের খাঁটি মধু', price: '৳750', originalPrice: '৳800', weight: '৫০০ গ্রাম', img: '/images/1.jpg', desc: 'সরাসরি সুন্দরবনের মৌয়ালদের থেকে সংগ্রহ করা শতভাগ খাঁটি প্রাকৃতিক মধু।' },
-      { id: 7, title: 'সিলেটের সাতকরা আচার', price: '৳180', weight: '২৫০ গ্রাম', img: '/images/5.jpg', desc: 'সাতকরার স্বতন্ত্র গন্ধ ও স্বাদে তৈরি এই আচার মাংস বা ভাতের সাথে খাওয়ার জন্য চমৎকার।' },
-      { id: 8, title: 'ময়মনসিংহের মণ্ডা', price: '৳220', weight: '৫০০ গ্রাম', img: '/images/logo.png', desc: 'ঐতিহ্যবাহী মুক্তাছারার মণ্ডা, যা দুধ ও চিনি দিয়ে বানানো হয়। মুখে দিলেই মিলিয়ে যায়।' },
-      { id: 9, title: 'খুলনার চুইঝাল মাংস', price: '৳650', weight: '১ কেজি', img: '/images/3.jpg', desc: 'চুইঝালের অসাধারণ স্বাদে গরুর মাংসের ঐতিহ্যবাহী ঝাল রান্না। একবার খেলে ভুলতে পারবেন না।' },
-      { id: 10, title: 'কক্সবাজারের লইট্টা ফ্রাই', price: '৳300', weight: '৫০০ গ্রাম', img: '/images/3.jpg', desc: 'সাগর পাড়ের তাজা লইট্টা মাছের মুচমুচে ফ্রাই। গরম ভাতের সাথে খাওয়ার জন্য অসাধারণ একটি পদ।' },
+      { id: 7, title: 'সিলেটের সাতকরা আচার', price: '৳180', weight: '২৫০ গ্রাম', img: 'images/5.jpg', desc: 'সাতকরার স্বতন্ত্র গন্ধ ও স্বাদে তৈরি এই আচার মাংস বা ভাতের সাথে খাওয়ার জন্য চমৎকার।' },
+      { id: 8, title: 'ময়মনসিংহের মণ্ডা', price: '৳220', weight: '৫০০ গ্রাম', img: 'images/logo.png', desc: 'ঐতিহ্যবাহী মুক্তাছারার মণ্ডা, যা দুধ ও চিনি দিয়ে বানানো হয়। মুখে দিলেই মিলিয়ে যায়।' },
+      { id: 9, title: 'খুলনার চুইঝাল মাংস', price: '৳650', weight: '১ কেজি', img: 'images/3.jpg', desc: 'চুইঝালের অসাধারণ স্বাদে গরুর মাংসের ঐতিহ্যবাহী ঝাল রান্না। একবার খেলে ভুলতে পারবেন না।' },
+      { id: 10, title: 'কক্সবাজারের লইট্টা ফ্রাই', price: '৳300', weight: '৫০০ গ্রাম', img: 'images/3.jpg', desc: 'সাগর পাড়ের তাজা লইট্টা মাছের মুচমুচে ফ্রাই। গরম ভাতের সাথে খাওয়ার জন্য অসাধারণ একটি পদ।' },
       { id: 11, title: 'রাজশাহীর আম', price: '৳1500', originalPrice: '৳1600', weight: '১০ কেজি', img: 'https://images.unsplash.com/photo-1591078381989-8a4c8a52994f?q=80&w=800&auto=format&fit=crop', desc: 'চিনি ও রসের জন্য বিখ্যাত রাজশাহীর ফজলি আম। সরাসরি বাগান থেকে সংগ্রহ করা শতভাগ কেমিক্যালমুক্ত।' },
-      { id: 12, title: 'পুরান ঢাকার বিরিয়ানি', price: '৳250', weight: '১ প্লেট', img: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=800&auto=format&fit=crop', desc: 'পুরান ঢাকার ঐতিহ্যবাহী স্বাদের কাচ্চি বিরিয়ানি। প্রতি কামড়ে পাবেন নবাবী আমেজ।' }
+      { id: 12, title: 'পুরান ঢাকার বিরিয়ানি', price: '৳250', weight: '১ প্লেট', img: 'images/5.jpg', desc: 'পুরান ঢাকার ঐতিহ্যবাহী স্বাদের কাচ্চি বিরিয়ানি। প্রতি কামড়ে পাবেন নবাবী আমেজ।' }
     ];
     
     document.getElementById('copyright-notice').textContent = `© ${new Date().getFullYear()} ৬৪ জেলার সুস্বাদু খাবার ঘর — Demo • Built with ❤️`;
@@ -419,3 +419,4 @@
 </body>
 
 </html>
+
